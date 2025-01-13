@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT00AL12-3003</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Styles */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #333;
+    color: white;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links li a:hover {
+    color: #ddd;
+    transition: 0.5s;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 80px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #333;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
+</style>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-content">
+            <h3>Menu</h3>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section">
+        <h3>This is a website for IT00AL12-3003 Advanced Web Development</h3>
+        <p>Student: Chen Z</p>
+        <h3>Timeline:</h3>
+        <ul class="timeline">
+            <li>Assignment 1 - Implementing a Single Page Website style page</li>
+        </ul>
+    </section>
+
+    <!-- <script src="script.js"></script> -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const homeLink = document.querySelector('.nav-links a[href="#"]');
+    homeLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        alert('Home link clicked');
+    });
+});
+     </script>
+</body>
+</html>
