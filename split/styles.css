@@ -55,6 +55,10 @@ body {
     margin: 0 auto;
 }
 
+#now {
+    background: orange;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .nav-links {
