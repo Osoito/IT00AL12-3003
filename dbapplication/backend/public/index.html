@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #333;
+            color: white;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-links li a:hover {
+            color: #ddd;
+            transition: 0.5s;
+        }
+
+        .section {
+            padding: 80px 20px 20px;
+            max-width: 1200px;
+            margin: 0;
+        }
+
+        #now {
+            background: orange;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: #333;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-content">
+            <h3>IT00AL12-3003</h3>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="section">
+        <h3>This is a website for IT00AL12-3003 Advanced Web Development</h3>
+        <p>Student: Chen Z</p>
+    </section>
+
+    <section class="section">
+        <h2>Add Data</h2>
+        <form id="addDataForm">
+            <label for="data">Data:</label>
+            <input type="text" id="data" name="data" required>
+            <button type="submit">Add</button>
+        </form>
+
+        <h2>View Data</h2>
+        <button id="viewDataButton">View Data</button>
+        <ul id="dataList"></ul>
+
+        <h2>Delete Data</h2>
+        <form id="deleteDataForm">
+            <label for="dataId">Data ID:</label>
+            <input type="text" id="dataId" name="dataId" required>
+            <button type="submit">Delete</button>
+        </form>
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const homeLink = document.querySelector('.nav-links a[href="#"]');
+            homeLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                alert('Home link clicked');
+            });
+        });
+
+        document.getElementById('addDataForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const data = document.getElementById('data').value;
+            fetch('/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data })
+            }).then(response => response.json())
+                .then(result => alert(result.message))
+                .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('viewDataButton').addEventListener('click', function () {
+            fetch('/view')
+                .then(response => response.json())
+                .then(data => {
+                    const dataList = document.getElementById('dataList');
+                    dataList.innerHTML = '';
+                    data.forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = `ID: ${item.id}, Data: ${item.data}, Timestamp: ${item.timestamp}`;
+                        dataList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('deleteDataForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const dataId = document.getElementById('dataId').value;
+            fetch('/delete', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: dataId })
+            }).then(response => response.json())
+                .then(result => alert(result.message))
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+
+</html>
