@@ -17,7 +17,7 @@ Users of this blog site will be the owner of the blog and the readers. They will
 This site will provide an easy-to-use online space for the owner to write and share their thoughts. And also for the readers to stably find the resources of the posts.
 
 | Type  | User | Precondition  | Main Flow | Alternative Flow | Result 
-| ------------- | ------------- |
+| ------------- | ------------- |--|--|---|---
 | Posting a new post  | Writer  |User is logged in as writer or admin| 1. Click "Create new post" button 2. Type in title and content 3. Click "Post"|- 4a. If posted witout title, send notification  to browser "Posted as no-title" after posting| The post is posted and shows up on the main page of the site
 | Reading a post  | Reader  |User is logged in and the post allows comments| 1. Scroll to the bottom of the read section 2. Type in comment content 3. Click "Post Comment" button  | - 3a. If user is not logged in or the post doesn't allow comment, send notification "You can't comment here" | The comment is posted and shows up in the comment section of the post
 
