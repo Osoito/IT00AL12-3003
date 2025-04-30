@@ -20,6 +20,23 @@ app.get('/api/blogs', (req, res) => {
     });
 });
 
+// Add this new endpoint for fetching a single blog
+app.get('/api/blogs/:id', (req, res) => {
+    const { id } = req.params;
+    const query = 'SELECT * FROM blogs WHERE id = ?';
+    
+    db.get(query, [id], (err, row) => {
+        if (err) {
+            console.error('Error fetching blog:', err.message);
+            res.status(500).json({ error: 'Failed to fetch blog' });
+        } else if (!row) {
+            res.status(404).json({ error: 'Blog not found' });
+        } else {
+            res.status(200).json(row);
+        }
+    });
+});
+
 // API to create a new blog
 app.post('/api/blogs', (req, res) => {
     const { title, article } = req.body;

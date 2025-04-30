@@ -1,58 +1,54 @@
-# Project phase 2 - Basic structure and main functionalities
+# Project Phase 2 - Implementation Details
 
+## 1. Development Environment
+- **Editor**: Visual Studio Code
+- **Terminal**: Integrated VSCode Terminal
+- **Version Control**: Git
 
+## 2. Technical Stack
+### Backend
+- Node.js server with Express
+- RESTful API endpoints for blog operations
+- Server running on port 3000
 
-## 1. Environment
+### Frontend
+- React for component-based UI
+- HTML5 and CSS3 for structure and styling
+- Attempted Tailwind CSS integration (pending resolution)
 
-Used VSCode
+### Database
+- SQLite for data persistence
+- Tables: blogs (id, title, article, publishedAt)
 
-## 2. Backend
+## 3. Project Architecture
+```
+Client (React) → API Endpoints → Node.js Server → SQLite Database
+```
 
-Node.js
+## 4. Core Functionalities
+- **Blog Creation**: Markdown editor with title and content fields
+- **Blog Publishing**: API endpoint to save posts to database
+- **Blog Viewing**: Homepage with chronological blog listing
+- **Navigation**: Responsive navbar for site sections
 
-## 3. Frontend
+## 5. Code Implementation
+### Error Handling
+```javascript
+try {
+    await axios.post('http://localhost:3000/api/blogs', {
+        title,
+        article,
+        publishedAt,
+    });
+    alert('Blog published successfully!');
+} catch (error) {
+    console.error('Error publishing blog:', error);
+    alert('Failed to publish blog.');
+}
+```
 
-React, html and css. Tried to install Tailwind but ended with too many unsolved errors.
-
-## 4. Database
-
-SQLite
-
-## 5. Basic structure and architecture
-
-Home page -> Blogs section -> Blog editor
-
-## 6. Functionalities
-
-Added blog editor, publish function and blogs section on home page.
-
-## 7. Code quality and documentation
-
-Tried to keep the code clean.
-
-## 8. Testing and error handling
-
-No testing added yet.
-In editor there is basic error handling for the editing user:
->try {
-                await axios.post('http://localhost:5000/api/blogs', {
-                    title,
-                    article,
-                    publishedAt,
-                });
-                alert('Blog published successfully!');
-                setTitle('');
-                setArticle('');
-            } catch (error) {
-                console.error('Error publishing blog:', error);
-                alert('Failed to publish blog.');
-            }
-        } else {
-            alert('Please fill in both the title and the article.');
-        }
-
-
-
-## 9. User interface and interaction
-
-Basic UI and interaction.
+## 6. Future Improvements
+- Add user authentication
+- Implement blog post testing
+- Complete Tailwind CSS integration
+- Add comment functionality

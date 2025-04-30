@@ -73,6 +73,26 @@ textarea::-webkit-scrollbar-thumb{
     white-space: pre-wrap;
 }
 
+.article-container {
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.md-editor {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.w-md-editor-text-input {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+/* Override default markdown editor styles */
+.wmde-markdown {
+    background: white !important;
+}
+
 .blog-options{
     position: fixed;
     bottom: 0;

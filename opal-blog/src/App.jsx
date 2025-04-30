@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import BlogsSection from './components/BlogsSection';
 import Editor from './components/Editor';
+import BlogPost from './components/BlogPost';
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     </>
                 } />
                 <Route path="/editor" element={<Editor />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
             </Routes>
         </Router>
     );

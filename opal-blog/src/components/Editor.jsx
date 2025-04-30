@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import MDEditor from '@uiw/react-md-editor';
 import '../css/editor.css';
 
 const Editor = () => {
@@ -49,12 +50,15 @@ const Editor = () => {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
-            <textarea
-                className="article"
-                placeholder="Start writing here..."
-                value={article}
-                onChange={(e) => setArticle(e.target.value)}
-            />
+            <div className="article-container">
+                <MDEditor
+                    value={article}
+                    onChange={setArticle}
+                    preview="edit"
+                    height={500}
+                    className="md-editor"
+                />
+            </div>
             <div className="blog-options">
                 <button className="btn dark publish-btn" onClick={handlePublish}>
                     Publish
