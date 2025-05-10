@@ -49,6 +49,5 @@ try {
 
 ## 6. Future Improvements
 - Add user authentication
-- Implement blog post testing
 - Complete Tailwind CSS integration
 - Add comment functionality

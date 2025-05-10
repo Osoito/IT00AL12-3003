@@ -18,7 +18,9 @@ This site will provide an easy-to-use online space for the owner to write and sh
 
 | Type  | User | Precondition  | Main Flow | Alternative Flow | Result 
 | ------------- | ------------- |--|--|---|---
-| Posting a new post  | Writer  |User is logged in as writer or admin| 1. Click "Create new post" button 2. Type in title and content 3. Click "Post"|- 4a. If posted witout title, send notification  to browser "Posted as no-title" after posting| The post is posted and shows up on the main page of the site
+Logging in as writer|Writer|User knows the needed info for logging in|1. On the home page, click on "Log in as writer" button 2. Redirect to log in page or pop up. 3. Fill in correct information | - 3a. if information is not matching, user will get notification of the problem| User is authorized as writer and redirected to home page
+| Posting a new post  | Writer  |User is logged in as writer or admin| 1. Click "Create new post" button 2. Type in title and content 3. Click "Post"|- 4a. If posted witout title, send notification  to browser "Posted as no-title" after posting| The post is posted and shows up on the main page of the site|
+Reading a post|Reader|No precondition|1. Enter the site and visit the home page 2. Click on a post 3. Redirect to the article page|No alt flow|The content of the chosen blog is shown on the page
 
 
 ## 3. UI Prototypes
