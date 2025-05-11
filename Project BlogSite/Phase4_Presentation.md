@@ -63,6 +63,7 @@ During development, many ideas from the planning phase were given up in order to
 
 Discoverd the conviniency of framework React in web developing. Learned more about building interactive site and linking between frontend and backend.
 Faced challenge when trying to implement database in other more advanced methods and turned to SQLite eventually. Tailwind CSS implementation was challenging after preparing in vanilla CSS. Spent most time fixing the interactive elements' logic.
+Learned many methods of implementing features, such as adding password protected page and password security.
 I would try adding comment section in the future, and improve the article editor page.
 
 ---
@@ -82,7 +83,9 @@ I would try adding comment section in the future, and improve the article editor
 4.5|4h|Develop in Phase 3, and fix errors from Phase 2| 
 5.5|4h|Same|
 7.5|5h|Same|
-| **Total**  | **51h** |                                 |
+10.5|8h|Work on deployment on azure|
+11.5|7h|Work on deployment on azure and add some new features
+| **Total**  | **66h** |                                 |
 
 ---
 
