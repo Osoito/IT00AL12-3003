@@ -91,4 +91,5 @@ I would try adding comment section in the future, and improve the article editor
 
 ## 🪢 Presentation link
 
-_Add a link to your video presentation or state that it was presented live._
+The presentation video is here, sorry for my bad mic:
+https://youtu.be/ttthg2Q06WY?si=MFh7o14nappIWB6e
